@@ -1,0 +1,324 @@
+{
+    // ======================== TOP LEVEL CONFIG ========================
+    "layer": "top",
+    "position": "top",
+    "reload_style_on_change": true,
+    // ======================== MODULES ORDER ========================
+    // Modules appear in the order listed below
+    "modules-left": [
+        "group/arch", // 1st - Left side
+        "mpris", // 2nd
+        "custom/cava" // 3rd
+    ],
+    "modules-center": [
+        "clock" // 4th - Center
+    ],
+    "modules-right": [
+        "hyprland/workspaces#2", // 5th - Right side
+        "battery", // 6th
+        "custom/notification", // 7th
+        "group/main" // 8th (last)
+    ],
+    // ======================== MODULE DEFINITIONS ========================
+    // (in order of appearance)
+    // 1. group/arch
+    "group/arch": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/arch-icon",
+            "memory",
+            "bluetooth",
+            "network"
+        ]
+    },
+    // 2. mpris
+    "mpris": {
+        "player": "playerctld",
+        "format": "{player_icon} {dynamic}",
+        "format-playing": "{player_icon} {dynamic}",
+        "format-paused": "{player_icon} {dynamic}",
+        "format-stopped": "",
+        "max-length": 20,
+        "dynamic-order": [
+            "artist",
+            "title"
+        ],
+        "dynamic-separator": " - ",
+        "dynamic-len": 75,
+        "tooltip": false,
+        "status-icons": {
+            "playing": " ",
+            "paused": " ",
+            "stopped": "Connection Terminated"
+        },
+        "on-click": "playerctl play-pause",
+        "on-click-middle": "playerctl previous",
+        "on-click-right": "playerctl next"
+    },
+    // 3. custom/cava
+    "custom/cava": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/cava.sh"
+    },
+    // 4. clock
+    "clock": {
+        "interval": 1,
+        "format": "{:%a, %b %d, %I:%M}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "weeks-pos": "right",
+            "on-scroll": 1
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    // 5. hyprland/workspaces#2
+    "hyprland/workspaces#2": {
+        "format": "{icon}",
+        "on-scroll-down": "hyprctl dispatch \"hl.dsp.focus({workspace = 'e+1'})\"",
+        "on-scroll-up": "hyprctl dispatch \"hl.dsp.focus({workspace = 'e-1'})\"",
+        "persistent-workspaces": {
+            "*": 6
+        },
+        "cursor": false,
+        "format-icons": {
+            "active": "",
+            "persistent": "",
+            "empty": ""
+        }
+    },
+    // 6. memory
+    "memory": {
+        "format": "Mem: {}%"
+    },
+    // 7. network
+    "network": {
+        "interval": 1,
+        "format-wifi": "Net: {signalStrength}%",
+        "format-ethernet": "󰈀",
+        "format-linked": "󱘖",
+        "format-disconnected": "󰖪",
+        "format-disabled": "󰖪",
+        "tooltip-format-wifi": "{essid} at {signalStrength}%",
+        "tooltip-format-ethernet": "{ifname} {ipaddr}",
+        "tooltip-format-disconnected": "Disconnected",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "on-click": "nmgui"
+    },
+    // 8. custom/notification
+    "custom/notification": {
+        "return-type": "json",
+        "interval": 3,
+        "exec": "bash ~/.config/waybar/scripts/notification.sh",
+        "on-click": "swaync-client -t -sw",
+        "on-click-middle": "swaync-client -C",
+        "on-click-right": "swaync-client -S",
+        "escape": true,
+        "tooltip": true
+    },
+    // 9. group/main
+    "group/main": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/group-icon",
+            "idle_inhibitor",
+            "pulseaudio#speaker",
+            "custom/power",
+            "power-profiles-daemon",
+            "tray"
+        ]
+    },
+    // ======================== SUB-MODULES (called within groups) ========================
+    // custom/arch-icon (inside group/arch)
+    "custom/arch-icon": {
+        "format": " Arch ",
+        "tooltip": false
+    },
+    // bluetooth (inside group/arch)
+    "bluetooth": {
+        "format-on": "Bluetooth: On",
+        "format-off": "Bluetooth: Off",
+        "format-disabled": "󰂲",
+        "format-connected": "{device_alias} ({device_battery_percentage}%)",
+        "tooltip-format": "Bluetooth on",
+        "tooltip-format-connected": "{device_enumerate} ({device_battery_percentage}%)",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "blueman-manager"
+    },
+    // battery (inside group/arch)
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "tooltip-format": "currently at {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    // custom/group-icon (inside group/main)
+    "custom/group-icon": {
+        "format": "  ",
+        "tooltip": false
+    },
+    // idle_inhibitor (inside group/main)
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    // pulseaudio#speaker (inside group/main)
+    "pulseaudio#speaker": {
+        "scroll-step": 5,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "tooltip-format": "{desc} {volume}%",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
+    // custom/power (inside group/main)
+    "custom/power": {
+        "format": "{icon} ",
+        "format-icons": [
+            " "
+        ],
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+    // power-profiles-daemon (inside group/main)
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+    // tray (inside group/main)
+    "tray": {
+        "icon-size": 15,
+        "spacing": 10
+    },
+    // ======================== EXTRA MODULES (referenced but not in main order) ========================
+    // hyprland/window
+    "hyprland/window": {
+        "format": " {title}",
+        "max-length": 55,
+        "icon": false
+    },
+    // hyprland/workspaces (commented out but kept)
+    // "hyprland/workspaces": {
+    //     "format": "{windows}",
+    //     "format-window-separator": "",
+    //     "workspace-taskbar": {
+    //         "enable": true,
+    //         "update-active-window": true,
+    //         "format": "{icon}",
+    //         "icon-size": 20,
+    //         "gap": 10,
+    //         "on-click-window": "bash ~/.config/waybar/scripts/focus_window.sh {address} {button}"
+    //     }
+    // },
+    // custom/pomo
+    "custom/pomo": {
+        "exec": "~/.config/waybar/scripts/pomo.sh",
+        "on-click": "~/.config/waybar/scripts/pomo.sh toggle",
+        "on-click-right": "~/.config/waybar/scripts/pomo.sh stop",
+        "on-scroll-up": "~/.config/waybar/scripts/pomo.sh preset-next",
+        "on-scroll-down": "~/.config/waybar/scripts/pomo.sh preset-prev",
+        "interval": 1,
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": false
+    },
+    // custom/reboot
+    "custom/reboot": {
+        "format": "{icon} ",
+        "format-icons": [
+            " "
+        ],
+        "on-click": "reboot",
+        "tooltip-format": "Reboot"
+    },
+    // custom/lock
+    "custom/lock": {
+        "format": "{icon} ",
+        "format-icons": [
+            " "
+        ],
+        "on-click": "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'",
+        "tooltip-format": "Logout"
+    },
+    // custom/spotify-icon
+    "custom/spotify-icon": {
+        "format": " ",
+        "tooltip": false
+    },
+    // pulseaudio#microphone
+    "pulseaudio#microphone": {
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click-right": "pavucontrol",
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "tooltip-format": "Microphone {format_source}"
+    }
+    // ======================== BOTTOM BAR (commented out) ========================
+    // {
+    //     "layer": "top",
+    //     "position": "bottom",
+    //     "reload_style_on_change": true,
+    //     "modules-left": [],
+    //     "modules-center": ["hyprland/workspaces"],
+    //     "modules-right": [],
+    //     "hyprland/window": {
+    //         "format": "{title}",
+    //         "icon": true
+    //     },
+    //     "hyprland/workspaces": {
+    //         "format": "{windows}",
+    //         "format-window-separator": "",
+    //         "workspace-taskbar": {
+    //             "enable": true,
+    //             "update-active-window": true,
+    //             "format": "{icon}",
+    //             "icon-size": 25,
+    //             "on-click-window": "bash ~/.config/waybar/scripts/focus_window.sh {address} {button}"
+    //         }
+    //     }
+    // }
+}

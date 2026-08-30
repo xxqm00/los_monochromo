@@ -1,0 +1,139 @@
+* {
+  font-family: "SF Pro Display", "Font Awesome 7 Free", "Nerd Fonts", monospace;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+window#waybar {
+  background: transparent;
+  /* border: 1px solid rgba(81, 81, 81, 0.3); */
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+/* WINDOW TITLE */
+#window {
+  color: rgba(200, 184, 154, 0.4);
+  padding: 0 12px;
+  letter-spacing: 1px;
+}
+
+/* TICKER CENTRE */
+#custom-ticker {
+  color: rgba(200, 184, 154, 0.2);
+  letter-spacing: 2px;
+  font-size: 9px;
+}
+
+/* MODULES DROITE */
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#clock,
+#custom-arch-icon,
+#custom-pomodoro,
+#network,
+#custom-notification,
+#power-profiles-daemon,
+#tray,
+#mpris,
+#custom-pomo {
+  padding: 3px;
+  color: rgba(255, 255, 255, 0.824);
+  /* border-left: 1px solid rgba(200, 184, 154, 0.08); */
+  /* letter-spacing: 1px; */
+}
+
+.modules-center {
+  border-radius: 15px;
+  background-color: rgba(25, 25, 25, 0.35);
+  padding: 5px;
+  padding: 4 4 4 3;
+  margin: 4 3 4 3;
+  border: 1px solid rgba(89, 89, 90, 0.04);
+
+}
+
+.modules-center #power-profiles-daemon,
+.modules-center #pulseaudio,
+.modules-center #custom-arch-icon,
+.modules-center #workspaces.2,
+.modules-center #network,
+.modules-center #mpris,
+.modules-center #clock,
+.modules-center #custom-power,
+.modules-center #custom-notification,
+.modules-center #tray {
+  background-color: rgba(32, 32, 32, 0.115);
+  border-radius: 10px;
+  padding: 0 6 0 6;
+  margin: 0 3 0 3;
+  color: white;
+}
+
+
+/* .modules-center #pulseaudio,
+.modules-center #power-profiles-daemon,
+.modules-center #network,
+.modules-center #custom-notification,
+.modules-center #tray,
+.modules-center #clock {
+  border-radius: 15px;
+  margin: 0 2 0 2;
+
+} */
+
+.modules-center #mpris {
+  border-radius: 10px;
+  margin: 0 2 0 2;
+  padding: 0 15 0 10;
+
+}
+
+.modules-left #custom-arch-icon,
+.modules-left #clock {
+  background-color: rgba(50, 50, 50, 0.156);
+  border-radius: 10px;
+  margin: 0 2 0 2;
+}
+
+.modules-left #workspaces {
+  padding: 0 5 0 5;
+}
+
+
+/* #custom-arch-icon, */
+/* #tray { */
+/* border-right: 1px solid rgba(200, 184, 154, 0.08); */
+
+/* } */
+
+#battery {
+  border-right: 1px solid rgba(200, 184, 154, 0.08);
+
+}
+
+
+/* GROUP/ARCH DRAWER INNER MODULES */
+#arch #memory,
+#arch #bluetooth,
+#arch #battery {
+  background-color: rgba(50, 50, 50, 0.156);
+  border-radius: 10px;
+  padding: 0 10px;
+  margin: 0 3 0 3;
+
+  /* border-left: 1px solid rgba(200, 184, 154, 0.08); */
+}
+
+#arch #custom-arch-icon {
+  background-color: rgba(50, 50, 50, 0.156);
+  border-radius: 10px;
+  padding: 0 10px;
+
+}

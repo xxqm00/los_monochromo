@@ -11,8 +11,8 @@
   "control-center-margin-top": 10,
   "control-center-margin-bottom": 10,
   "control-center-margin-right": 10,
-  "control-center-margin-left": 0,
-  "notification-window-width": 380,
+  "control-center-margin-left": 10,
+  "notification-window-width": 300,
   "notification-body-image-height": 200,
   "notification-body-image-width": 200,
   "timeout": 8,
@@ -35,8 +35,7 @@
   },
   "widgets": [
     "buttons-grid",
-    "volume",
-    "backlight",
+    "dnd",
     "notifications"
   ],
   "widget-config": {
@@ -45,11 +44,11 @@
     },
     "volume": {
       "label": " Sound ",
-      "expand-button-label": " ",
-      "collapse-button-label": " ",
-      "show-per-app": false,
+      "expand-button-label": "",
+      "collapse-button-label": "",
+      "show-per-app": true,
       "show-per-app-icon": false,
-      "show-per-app-label": false
+      "show-per-app-label": true
     },
     "backlight": {
       "label": " Brightness "
@@ -60,7 +59,7 @@
     "title": {
       "text": " Notifications Center",
       "clear-all-button": false,
-      "button-text": " 󰆴 "
+      "button-text": "󰆴"
     },
     "buttons-grid": {
       "actions": [
@@ -79,24 +78,32 @@
           "update-command": "sh -c \"rfkill list bluetooth | grep -q \"Soft blocked: no\" && echo true || echo false\""
         },
         {
-          "label": "",
+          "label": "",
           "type": "toggle",
           "active": false,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && pactl set-source-mute @DEFAULT_SOURCE@ 1 || pactl set-source-mute @DEFAULT_SOURCE@ 0'",
           "update-command": "sh -c '[[ $(pactl get-source-mute @DEFAULT_SOURCE@) == *yes* ]] && echo true || echo false'"
         },
-      {
-          "label": "",
+        {
+          "label": "",
           "type": "normal",
           "active": false,
           "command": "sh -c 'swaync-client -C'"
         },
-              {
-          "label": "",
+        {
+          "label": "󱏧",
           "type": "toggle",
           "active": false,
           "command": "sh -c 'swaync-client -d'"
+        },
+        {
+          "label": "",
+          "type": "toggle",
+          "active": false,
+          "command": "sh -c '$HOME/.config/swaync/scripts/toggle-theme.sh'",
+          "update-command": "sh -c '[[ $(cat ~/.config/swaync/.theme 2>/dev/null) == \"light\" ]] && echo true || echo false'"
         }
+
       ]
     }
   }

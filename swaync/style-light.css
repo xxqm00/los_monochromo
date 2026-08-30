@@ -1,21 +1,14 @@
 :root {
-    --border-radius: 15px;
+    --border-radius: 22px;
     --cc-bg: transparent;
-    --widget-background: rgba(220, 220, 220, 0.65);
+
+    --widget-background: rgba(220, 220, 220, 0.7);
     --noti-bg-alpha: 0.6;
     --padding: calc(var(--border-radius) / 2);
 }
-
-
-.widget-mpris .widget-mpris-player button {
-    display: none;
-}
-/* Kill GTK focus ring globally */
 * {
-    outline: none;
-    -gtk-outline-radius: 0;
+    color: rgb(16, 16, 16);
 }
-
 
 .control-center {
     border-radius: 0;
@@ -40,15 +33,14 @@
 }
 
 .widget.widget-mpris {
-    background: var(--widget-background);
-    border-radius: var(--border-radius);
-    padding: calc(var(--border-radius) / 2);
-    color:white;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
     border: none;
 }
 
 .widget.widget-mpris>carouselindicatordots {
-    --dots-padding: 4px;
+    --dots-padding: 220px;
     padding: var(--dots-padding);
     padding-left: var(--dots-padding);
     padding-right: calc(6px + var(--dots-padding));
@@ -57,60 +49,15 @@
 }
 
 .widget-mpris>box>button:hover {
-    background: rgba(190, 190, 190, 1);
+    background: rgba(220, 220, 220, 1);
 }
 
 .widget-mpris-player {
-    color:white;
     box-shadow: none;
     border: var(--border);
     margin: 0 var(--padding);
 }
 
-.widget-mpris-player label, 
-.widget-mpris-player .title, 
-.widget-mpris-player .artist {
-    color: #ffffff;
-}
-.widget-mpris-player button * {
-    color: #ffffff;
-}
 .widget-mpris-player:only-child {
     margin: 0;
-}
-
-/* Light mode text */
-* {
-    color: #2a2a2a;
-}
-
-/* Notifications */
-.notification {
-    background: rgba(215, 215, 215, var(--noti-bg-alpha));
-    color: #2a2a2a;
-}
-
-.notification-content {
-    color: #2a2a2a;
-}
-
-.notification .summary {
-    color: #1a1a1a;
-}
-
-.notification .body {
-    color: #3a3a3a;
-}
-
-.close-button {
-    background: rgba(190, 190, 190, 0.8);
-    color: #2a2a2a;
-}
-
-.close-button:hover {
-    background: rgba(160, 160, 160, 1);
-}
-
-.notification-group-headers {
-    color: #2a2a2a;
 }

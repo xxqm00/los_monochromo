@@ -1,0 +1,20 @@
+{
+    "label" : "lock",
+    "action" : "veila lock",
+    "text" : "",
+    "keybind" : "l"
+}
+
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "",
+    "keybind" : "s"
+}
+
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "",
+    "keybind" : "r"
+}

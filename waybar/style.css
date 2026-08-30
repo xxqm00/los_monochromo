@@ -1,6 +1,7 @@
 * {
-  font-family: "SF Pro","Font Awesome 7", monospace;
-  font-size: 11px;
+  font-family: "SF Pro Display", "Font Awesome 7 Free", "Nerd Fonts", monospace;
+  font-size: 14px;
+  font-weight: 500;
   border: none;
   border-radius: 0;
   padding: 0;
@@ -8,27 +9,10 @@
 }
 
 window#waybar {
-  background: rgba(10, 10, 10, 0.92);
-  border-bottom: 1px solid rgba(200, 184, 154, 0.15);
+  background: transparent;
+  /* border: 1px solid rgba(81, 81, 81, 0.3); */
+  border-radius: 5px;
   color: #ffffff;
-}
-
-/* WORKSPACES */
-#workspaces button {
-  padding: 0 8px;
-  color: rgba(215, 215, 215, 0.3);
-  border-bottom: 2px solid transparent;
-  transition: all 0.15s;
-}
-
-#workspaces button.active {
-  color: #c8b89a;
-  border-bottom: 2px solid #c8b89a;
-}
-
-#workspaces button:hover {
-  color: rgba(200, 184, 154, 0.7);
-  background: rgba(200, 184, 154, 0.05);
 }
 
 /* WINDOW TITLE */
@@ -51,6 +35,7 @@ window#waybar {
 #network,
 #pulseaudio,
 #clock,
+#custom-arch-icon,
 #custom-pomodoro,
 #network,
 #custom-notification,
@@ -58,43 +43,103 @@ window#waybar {
 #tray,
 #mpris,
 #custom-pomo {
-  padding: 0 10px;
+  padding: 3px;
   color: rgba(255, 255, 255, 0.824);
-  border-left: 1px solid rgba(200, 184, 154, 0.08);
-  letter-spacing: 1px;
+  /* border-left: 1px solid rgba(200, 184, 154, 0.08); */
+  /* letter-spacing: 1px; */
 }
 
-/* #clock {
-  color: #c8b89a;
-  letter-spacing: 2px;
+.modules-center {
+  border-radius: 15px;
+  background-color: rgba(25, 25, 25, 0.35);
+  padding: 5px;
+  padding: 4px 4px 4px 3px;
+  margin: 4px 3px 4px 3px;
+  border: 1px solid rgba(89, 89, 90, 0.04);
+
 }
 
-#cpu {
-  color: #c87060;
+.modules-center #power-profiles-daemon,
+.modules-center #pulseaudio,
+.modules-center #custom-arch-icon,
+.modules-center #workspaces.2,
+.modules-center #workspaces,
+.modules-center #network,
+.modules-center #mpris,
+.modules-center #clock,
+.modules-center #idle_inhibitor,
+.modules-center #custom-power,
+.modules-center #custom-notification,
+.modules-center #tray,
+.modules-center #custom-cava,
+.modules-center #custom-settings-icon {
+  background-color: rgba(32, 32, 32, 0.115);
+  border-radius: 10px;
+  padding: 0px 6px 0px 6px;
+  margin: 0px 3px 0px 3px;
+  color: white;
+}
+.modules-center #custom-cava{
+  color:rgba(255, 255, 255, 0.35);
 }
 
-#memory {
-  color: #6090c8;
-}
+/* .modules-center #pulseaudio,
+.modules-center #power-profiles-daemon,
+.modules-center #network,
+.modules-center #custom-notification,
+.modules-center #tray,
+.modules-center #clock {
+  border-radius: 15px;
+  margin: 0 2 0 2;
 
-#network {
-  color: #60a880;
-}
-
-#pulseaudio {
-  color: #c8a860;
 } */
-/* 
-#custom-pomo {
-  color: rgba(200, 184, 154, 0.6);
-  letter-spacing: 2px;
-} */
+
+.modules-center #mpris {
+  border-radius: 10px;
+  margin: 0px 2px 0px 2px;
+  padding: 0px 15px 0px 10px;
+
+}
+
+.modules-left #custom-arch-icon,
+.modules-left #clock {
+  background-color: rgba(50, 50, 50, 0.156);
+  border-radius: 10px;
+  margin: 0px 2px 0px 2px;
+}
+
+.modules-left #workspaces {
+  padding: 0px 5px 0px 5px;
+}
+
+
+/* #custom-arch-icon, */
+/* #tray { */
+/* border-right: 1px solid rgba(200, 184, 154, 0.08); */
+
+/* } */
+
+#battery {
+  border-right: 1px solid rgba(200, 184, 154, 0.08);
+
+}
+
 
 /* GROUP/ARCH DRAWER INNER MODULES */
-#arch #custom-arch-icon,
 #arch #memory,
 #arch #bluetooth,
 #arch #battery {
-  padding: 0 10px;
-  border-left: 1px solid rgba(200, 184, 154, 0.08);
+  background-color: rgba(50, 50, 50, 0.156);
+  border-radius: 10px;
+  padding: 0px 10px;
+  margin: 0px 3px 0px 3px;
+
+  /* border-left: 1px solid rgba(200, 184, 154, 0.08); */
+}
+
+#arch #custom-arch-icon {
+  background-color: rgba(50, 50, 50, 0.156);
+  border-radius: 10px;
+  padding: 0px 10px;
+
 }

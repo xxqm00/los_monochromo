@@ -1,9 +1,22 @@
 [background]
-mode = "file"
-path = "/home/komari/Pictures/Wallpapers/clay-banks-u27Rrbs9Dwc-unsplash.png"
-color = "#000000"
-dim_strength = 64
+mode = "gradient"
+color = "#00000000"
+scaling = "fill"
+dim_strength = 54
 
+[background.gradient]
+top_left = "#00000000"
+top_right = "#00000000"
+bottom_left = "#00000000"
+bottom_right = "#00000000"
+
+[[background.outputs]]
+name = "DP-1"
+path = "/path/to/left.jpg"
+
+[[background.outputs]]
+name = "HDMI-A-1"
+path = "/path/to/right.jpg"
 [battery]
 enabled = false
 
@@ -11,57 +24,61 @@ enabled = false
 enabled = false
 
 [visuals.clock]
+enabled = false
 format = "12h"
 style = "standard"
 meridiem_font_size = 22
 meridiem_x = 6
 meridiem_y = 7
-font_family = "Geom"
-font_weight = 600
-color = "#ffffff"
+font_family = "SF Pro"
+font_weight = 400
+color = "rgba(255, 255, 255, 0.81)"
 font_size = 88
 halign = "center"
-valign = "top"
+valign = "center"
 x = 0
-y = 40
+y = -60
 
 [visuals.date]
+enabled = false
 format = "long"
-font_family = "Google Sans Flex"
+font_family = "SF Pro"
 font_weight = 400
-font_size = 18
-color = "#ffffff"
+color = "rgba(255, 255, 255, 0.81)"
+font_size = 22
 halign = "center"
-valign = "top"
+valign = "center"
 x = 0
-y = 140
+y = 0
 
 [visuals.input]
-placeholder = "Password"
-background_color = "rgba(0, 0, 0, 0.08)"
-width = 310
-height = 54
-radius = 50
-mask_color = "#ffffff"
-font_family = "Google Sans Flex"
-font_weight = 400
-font_size = 16
-border_color = "rgb(255, 255, 255)"
+placeholder = "..."
+background_color = "rgba(58, 58, 58, 0.6)"
 border_width = 3
+width = 310
+height = 24
+radius = 0
+mask_color = "#ffffff"
+font_family = "SF Pro Display"
+font_weight = 500
+font_size = 16
 halign = "center"
-valign = "bottom"
+valign = "center"
 x = 0
-y = -30
+y = 0
 
 [visuals.status]
+enabled = false
 mode = "inline"
-rejected_color = "#FFD5D5"
-pending_color = "#ECECEC"
+rejected_color = "#2a0000"
+pending_color = "#ffffff"
 
 [visuals.eye]
-color = "rgba(255, 255, 255, 0.72)"
+enabled = false
+color = "rgba(123, 123, 123, 0.86)"
 
 [visuals.caps_lock]
+enabled = false
 color = "rgba(255, 255, 255, 0.52)"
 
 [visuals.placeholder]
@@ -69,33 +86,18 @@ color = "rgba(255, 255, 255, 0.6)"
 
 [visuals.avatar]
 enabled = false
-image_path = "/home/komari/Pictures/pfps/full layoura/badGuy Soueater/d27671faf02e1f0cad113fc58e70537a.jpg"
-size = 150
-background_color = "rgba(255, 255, 255, 0.04)"
-placeholder_padding = 28
-ring_color = "rgba(255, 255, 255, 0.15)"
-ring_width = 3
-icon_color = "#ffffff"
-halign = "center"
-valign = "bottom"
-x = 0
-y = -350
+image_path = "/home/key/.config/veila/pfp.jpg"
+size = 100
 
 [visuals.username]
 enabled = false
-font_family = "Google Sans Flex"
-font_weight = 400
-color = "rgba(255, 255, 255, 0.84)"
-font_size = 28
-halign = "center"
-valign = "center"
 x = 0
-y = -135
+y = -40
 
 [visuals.keyboard]
 enabled = false
 background_size = 46
-radius = 23
+radius = 0
 background_color = "rgba(255, 255, 255, 0.05)"
 color = "rgba(255, 255, 255, 0.68)"
 size = 16
@@ -107,8 +109,8 @@ y = 21
 [visuals.battery]
 background_color = "rgba(255, 255, 255, 0.05)"
 background_size = 46
-radius = 23
-color = "rgb(255, 255, 255)"
+radius = 0
+color = "rgba(255, 255, 255, 0.68)"
 size = 20
 halign = "right"
 valign = "top"
@@ -125,10 +127,10 @@ y = -112
 
 [visuals.weather.temperature]
 font_size = 40
-font_family = "Google Sans Flex"
-font_weight = 400
+font_family = "Geom"
+font_weight = 600
 letter_spacing = 0
-color = "rgb(255, 255, 255)"
+color = "rgba(255, 255, 255, 0.73)"
 halign = "left"
 valign = "bottom"
 x = 40
@@ -136,9 +138,9 @@ y = -70
 
 [visuals.weather.location]
 font_size = 22
-font_family = "Google Sans Flex"
+font_family = "SF Pro"
 font_weight = 400
-color = "rgb(255, 255, 255)"
+color = "rgba(214, 227, 255, 0.58)"
 halign = "left"
 valign = "bottom"
 x = 40
@@ -147,39 +149,36 @@ y = -44
 [visuals.now_playing]
 enabled = false
 fade_duration_ms = 320
-halign = "center"
-valign = "bottom"
 
 [visuals.now_playing.artwork]
-enabled = true
 size = 44
-radius = 8
+radius = 0
 opacity = 90
-halign = "center"
-valign = "bottom"
+halign = "left"
+valign = "center"
 x = 10
 y = 0
 relative_to = "now_playing"
 
 [visuals.now_playing.artist]
 width = 318
-color = "rgb(255, 255, 255)"
-font_family = "Google Sans Flex"
+color = "rgba(255, 255, 255, 0.39)"
+font_family = "SF Pro"
 font_size = 16
 font_weight = 400
-halign = "center"
-valign = "bottom"
+halign = "left"
+valign = "top"
 x = 65
 y = 10
 relative_to = "now_playing"
 
 [visuals.now_playing.title]
 width = 318
-color = "rgb(255, 255, 255)"
-font_family = "Google Sans Flex"
+color = "rgba(255, 255, 255, 0.69)"
+font_family = "SF Pro"
 font_size = 16
 font_weight = 400
-halign = "center"
+halign = "left"
 valign = "bottom"
 x = 65
 y = -10
@@ -187,18 +186,17 @@ relative_to = "now_playing"
 
 # Now playing backdrop
 [[visuals.backdrop]]
-enabled = true
+enabled = false
 name = "now_playing"
 show_when = "now_playing"
 mode = "blur"
-color = "rgba(18, 18, 18, 0.02)"
+color = "rgba(255, 255, 255, 0.05)"
 blur_strength = 12
-radius = 10
-border_color = "#ffffff"
+radius = 0
+border_color = "#FFFFFF18"
 width = 400
 height = 60
-halign = "center"
+halign = "right"
 valign = "bottom"
 x = -40
 y = -40
-z = 1

@@ -11,86 +11,86 @@
     },
     "modules": [
          "break",
-           {
-            "type": "custom",
-            "key": "                         Welcome back, kie"
-        },
+        //    {
+        //     "type": "custom",
+        //     "key": "                         Welcome back, kie"
+        // },
         {
             "type": "custom",
-            "key": "            ╭─────────────────────────────────────────╮"
+            "key": "            ─────────────────────────────────────────"
         },
         // {
         //     "type": "custom",
-        //     "key": "│                                         │"
+        //     "key": "                                         "
         // },
          {
             "type": "os",
-            "key": "            │  OS           ",
-            "format": "{pretty-name>22}  │"
+            "key": "              OS           ",
+            "format": "{pretty-name>22}  "
         },
         {
             "type": "command",
-            "key": "            │  Kernel       ",
+            "key": "              Kernel       ",
             "text": "uname -r | cut -d '-' -f1",
-            "format": "{>22}  │"
+            "format": "{>22}  "
         },
         {
             "type": "command",
-            "key": "            │  Uptime       ",
+            "key": "              Uptime       ",
             "text": "uptime -p | sed -E 's/up //; s/ days?/d/g; s/ hours?/h/g; s/ minutes?/m/g'",
-            "format": "{>22}  │"
+            "format": "{>22}  "
         },
         {
             "type": "shell",
-            "key": "            │  Shell        ",
-            "format": "{pretty-name>22}  │"
+            "key": "              Shell        ",
+            "format": "{pretty-name>22}  "
         },
         {
             "type": "command",
-            "key": "            │  WM           ",
+            "key": "              WM           ",
             "text": "echo $XDG_CURRENT_DESKTOP",
-            "format": "{>22}  │"
+            "format": "{>22}  "
         },
         {
-	        "key": "            │  OS Age                      ",
+	        "key": "              OS Age                      ",
             "type": "disk",
 	        "folders": "/",
-	        "format": "{days} days   │"
+	        "format": "{days} days   "
 	    },
         {
             "type": "command",
-            "key": "            │  Ram          ",
+            "key": "              Ram          ",
             "text": "free -m | awk 'NR==2{printf \"%.2f / %.2f GiB\",$3/1024,$2/1024}'",
-            "format": "{>22}  │"
+            "format": "{>22}  "
         },
         {
             "type": "command",
-            "key": "            │  CPU          ",
+            "key": "              CPU          ",
             "text": "lscpu | grep 'Model name' | sed -E 's/.*(i[0-9]-[0-9A-Za-z]+).*/\\1/'",
-            "format": "{>22}  │"
+            "format": "{>22}  "
         },
         {
             "type": "command",
-            "key": "            │  Disk         ",
-            "format": "{>22  │"
+            "key": "              Disk         ",
+            "format": "{>22  "
         },
 
         {
             "type": "packages",
-            "key": "            │  Packages     ",
-            "format": "{all>22}  │"
+            "key": "              Packages     ",
+            "format": "{all>22}  "
         },
         // {
         //     "type": "custom",
-        //     "key": "│                                         │"
+        //     "key": "                                         "
         // },
         {
             "type": "custom",
-            "key": "            ╰─────────────────────────────────────────╯"
+            "key": "            ─────────────────────────────────────────"
         },
         {
             "type": "disk",
-            "key": "              ",
+            "key": "            ",
             "format": "{size-used} / {size-total} ({size-percentage}) {filesystem}"
         }
     ]

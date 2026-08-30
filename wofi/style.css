@@ -1,40 +1,150 @@
-window {
-    margin: 0px;
-    background-image: linear-gradient(to right, #000000 0%, #434343 51%, #000000 100%);
+/* =======================================================================
+   WOFI — DARK THEME
+   -----------------------------------------------------------------------
+   Wofi's CSS is GTK CSS, not browser CSS. It supports @define-color
+   (used below) but not var()/custom properties for things like sizes
+   or fonts, so those are left as plain values in each rule instead.
+
+   TO RESTYLE: change the colors in section 1. Everything else refers
+   back to those names, so a full re-theme is usually a one-block edit.
+   To adjust layout (width/height/location/etc.) instead, edit the
+   flags in wofi-launcher.sh — those override anything set here.
+   ======================================================================= */
+
+
+/* -----------------------------------------------------------------------
+   1. COLOR PALETTE — edit this block to change the whole theme
+   ----------------------------------------------------------------------- */
+@define-color bg            rgba(20, 20, 20, 0.5); /* main window background */
+@define-color bg-alt        #1e1e1e; /* search bar background */
+@define-color surface       #ffffff; /* entry background on hover */
+@define-color selected-bg   #1e1e1e; /* selected entry background */
+@define-color fg            #e2e2f0; /* primary text */
+@define-color fg-muted      #1e1e1e; /* placeholder / secondary text */
+@define-color accent        #ffffff; /* border + selected-entry accent */
+@define-color border        #1e1e1e; /* window border / dividers */
+@define-color scrollbar     #45455e; /* scrollbar handle */
+
+
+/* -----------------------------------------------------------------------
+   2. TYPOGRAPHY — applies everywhere unless overridden below
+   ----------------------------------------------------------------------- */
+* {
+    font-family: "Sf Pro", "Noto Sans", sans-serif;
+    font-size: 14px;
 }
 
+
+/* -----------------------------------------------------------------------
+   3. WINDOW — the outermost container
+   ----------------------------------------------------------------------- */
+#window {
+    background-color: @bg;
+    color: @fg;
+    border: 1px solid @border;
+    border-radius: 12px;
+}
+
+
+/* -----------------------------------------------------------------------
+   4. OUTER BOX — wraps the search bar + results list
+   ----------------------------------------------------------------------- */
+#outer-box {
+    background-color: @bg;
+    margin: 0px;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+
+/* -----------------------------------------------------------------------
+   5. SEARCH INPUT
+   ----------------------------------------------------------------------- */
 #input {
-    margin: 10px;
+    background-color: @bg-alt;
+    color: @fg;
+    border: 1px solid @border;
+    border-radius: 12px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+}
+
+#input:focus {
+    border-color: @accent;
+}
+
+/* Placeholder text color (GTK entry uses the "placeholder" node) */
+#input placeholder {
+    color: @fg-muted;
+}
+
+
+/* -----------------------------------------------------------------------
+   6. RESULTS LIST
+   ----------------------------------------------------------------------- */
+#scroll {
+    margin: 0px;
     border: none;
-    color: #f8f8f2;
-    border-radius: 0px;
-    background-image: linear-gradient(to right, #121210 0%, #191919 51%, #121210 100%);
 }
 
 #inner-box {
-    margin: 5px;
-    border: none;
-    background-image: linear-gradient(to right, #121210 0%, #191919 51%, #121210 100%);
+    background-color: @bg;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 12px;
 }
 
-#outer-box {
-    margin: 5px;
-    border: none;
-    background-image: linear-gradient(to right, #000000 0%, #434343 51%, #000000 100%);
+/* Custom scrollbar (only visible if --hide-scroll is removed) */
+scrollbar {
+    background-color: transparent;
 }
 
-#scroll {
-    margin: 5px;
-    border: none;
+scrollbar slider {
+    background-color: @scrollbar;
+    border-radius: 8px;
+    min-width: 6px;
 }
 
-#text {
-    margin: 5px;
-    border: none;
-    color: #f8f8f2;
+
+/* -----------------------------------------------------------------------
+   7. ENTRIES — one row per app result
+   ----------------------------------------------------------------------- */
+#entry {
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 6px 8px;
+    margin: 2px 0px;
+}
+
+#entry:hover {
+    background-color: @surface;
+    border-radius: 0px;
 }
 
 #entry:selected {
+    background-color: @selected-bg;
+    border-left: 3px solid @accent;
+}
+
+/* App icon shown to the left of each entry */
+#img {
+    margin-right: 10px;
+    -gtk-icon-size: 32px;
+}
+
+/* App name text inside each entry */
+#text {
+    color: @fg;
+}
+
+#entry:selected #text {
+    color: @accent;
+}
+
+/* Expander shown for entries with multiple actions (right-click menu) */
+#expander-box {
+    background-color: @surface;
+    /* border-radius: 6px; */
     border-radius: 0px;
-    background-image: linear-gradient(to right, #000000 0%, #434343 51%, #000000 100%);
+
 }

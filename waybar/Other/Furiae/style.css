@@ -1,0 +1,124 @@
+* {
+    font-family: "SF Pro Display", "Font Awesome 7 Free", monospace;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+    padding: 1;
+    margin: 0;
+}
+
+window#waybar {
+    border-radius: 1px;
+    /* background-color: transparent; */
+    background-color: rgba(5, 5, 5, 0.75);
+    padding: 5px;
+    padding: 4 4 4 4;
+    margin: 4 3 4 3;
+    border: 1px solid rgba(89, 89, 90, 0.04);
+    color: #ffffff;
+}
+
+/* ==================== WINDOW TITLE ==================== */
+#window {
+    color: rgba(200, 184, 154, 0.4);
+    padding: 0 12px;
+    letter-spacing: 1px;
+}
+
+/* ==================== TICKER CENTRE ==================== */
+#custom-ticker {
+    color: rgba(200, 184, 154, 0.2);
+    letter-spacing: 2px;
+    font-size: 9px;
+}
+
+
+.modules-center #mpris {
+    margin: 0 2 0 2;
+    padding: 0 15 0 10;
+}
+
+/* ==================== CAVA & WORKSPACES ==================== */
+#custom-cava,
+#workspaces.2 {
+    padding: 0 5 0 5;
+}
+
+#workspaces.2 button:hover{
+  background-color: transparent;
+}
+/* ==================== LEFT MODULES ==================== */
+.modules-left #custom-arch-icon,
+.modules-left #clock {
+    background-color: rgba(50, 50, 50, 0.1);
+    border-radius: 10px;
+    margin: 0 2 0 2;
+}
+
+.modules-left #workspaces {
+    padding: 0 5 0 5;
+}
+
+/* ==================== GROUP/ARCH DRAWER INNER MODULES ==================== */
+#arch #memory,
+#arch #bluetooth,
+#arch #battery,
+#arch #network {
+    background-color: rgba(50, 50, 50, 0.1);
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 3 5 3 5;
+}
+
+#arch #custom-arch-icon {
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+/* ==================== MAIN GROUP MODULES ==================== */
+#main #workspaces,
+#main #pulseaudio,
+#main #custom-power,
+#main #power-profiles-daemon,
+#main #tray,
+#main #idle_inhibitor
+ {
+    background-color: rgba(50, 50, 50, 0.1);
+    border-radius: 10px;
+    padding: 2 3 2 3;
+    margin: 0 2 0 2;
+}
+
+/* added because above makes the three look like circles. */
+
+#main #power-profiles-daemon,
+#main #tray,
+#main #idle_inhibitor {
+    padding: 0 10 0 10;
+}
+
+/* ==================== WORKSPACES ==================== */
+#workspaces button {
+    padding: 0 1px;
+}
+
+/* ==================== GROUP ICON ==================== */
+#custom-group-icon {
+    padding: 0 5px;
+}
+
+/* ==================== NOTIFICATION ==================== */
+#custom-notification {
+    margin: 0 5 0 5;
+}
+
+/* ==================== UNUSED/COMMENTED OUT ==================== */
+/* 
+   These selectors were either unused or redundant:
+   - Removed: .modules-center #custom-cava (not in config)
+   - Removed: #custom-cava, #workspaces.2 (kept since used)
+   - Removed: #group-arch (not a valid selector)
+   - Removed: specific #mpris in modules-left (not needed, handled by general)
+*/

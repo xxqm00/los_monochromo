@@ -1,70 +1,73 @@
 :root {
-    --border-radius: 15px;
-    --cc-bg: transparent;
-    --widget-background: rgba(46, 46, 46, 0.7);
-    --noti-bg-alpha: 0.6;
-    --padding: calc(var(--border-radius) / 2);
+  --border-radius: 22px;
+  --cc-bg: transparent;
+  --widget-background: rgba(4, 4, 4, 0.2);
+  --widget-background-alt: rgba(12, 12, 12, 0.4);
+  --noti-bg-alpha: 0.6;
+  --padding: calc(var(--border-radius) / 2);
 }
 
-.widget-mpris .widget-mpris-player button {
-    display: none;
-}
-/* Kill GTK focus ring globally */
-* {
-    outline: none;
-    -gtk-outline-radius: 0;
+*{
+  color: rgba(255, 255, 255, 0.766);
 }
 
+.notification-group {
+  background-color: transparent;
+  /* background-color: rgba(11, 11, 11, 0.45); */
+  border: none;
+}
 
-.control-center {
-    border-radius: 0;
+.notification {
+  background-color: rgba(11, 11, 11, 0.45);
+  border-radius: 10;
+  padding: 15px;
+  border: 1px solid transparent;
 }
 
 .widgets>.widget,
 .widget-mpris>carouselindicatordots,
 .widget-mpris>box>button {
-    background: var(--widget-background);
-    border-radius: var(--border-radius);
-    padding: calc(var(--border-radius) / 2);
-    border: var(--border);
+  background: var(--widget-background);
+  border-radius: var(--border-radius);
+  padding: calc(var(--border-radius) / 2);
+  border: var(--border);
 }
 
 .control-center-list-placeholder {
-    padding: var(--border-radius);
+  padding: var(--border-radius);
 }
 
 .notification-group {
-    border-radius: var(--border-radius);
-    padding: 8px;
+  border-radius: var(--border-radius);
+  padding: 8px;
 }
 
 .widget.widget-mpris {
-    background: var(--widget-background);
-    border-radius: var(--border-radius);
-    padding: calc(var(--border-radius) / 2);
-    color: white;
-    border: none;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: none;
 }
 
 .widget.widget-mpris>carouselindicatordots {
-    --dots-padding: 4px;
-    padding: var(--dots-padding);
-    padding-left: var(--dots-padding);
-    padding-right: calc(6px + var(--dots-padding));
-    margin: 0;
-    margin-top: var(--padding);
+  --dots-padding: 4px;
+  padding: var(--dots-padding);
+  padding-left: var(--dots-padding);
+  padding-right: calc(6px + var(--dots-padding));
+  margin: 0;
+  margin-top: var(--padding);
 }
 
 .widget-mpris>box>button:hover {
-    background: rgba(46, 46, 46, 1);
+  background: rgba(4, 4, 4, 1);
 }
 
 .widget-mpris-player {
-    box-shadow: none;
-    border: var(--border);
-    margin: 0 var(--padding);
+  box-shadow: none;
+  border: var(--border);
+  margin: 0 var(--padding);
 }
 
 .widget-mpris-player:only-child {
-    margin: 0;
+  margin: 0;
 }

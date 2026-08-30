@@ -13,19 +13,22 @@
    "imports": [],
    "close_on_focus_loss": false,
    "consider_preedit": false,
-   "pop_to_root_on_close": true,
+   "pop_to_root_on_close": false,
    "pop_on_backspace": true,
    "activate_on_single_click": true,
    "escape_key_behavior": "navigate_back",
-   "favicon_service": "google",
-   "keybinding": "default",
-   "pixmap_cache_mb": 50,
+   "favicon_service": "twenty",
+   "keybinding": "vim",
    "search_files_in_root": false,
+   "input_server": {
+      "enabled": true
+   },
+   "global_shortcuts": {
+      "inhibit_apps": []
+   },
    "font": {
-      "rendering": "qt",
       "normal": {
-         "family": "SF Pro",
-         "size": 12
+         "family": "auto"
       }
    },
    "theme": {
@@ -34,24 +37,22 @@
          "icon_theme": "auto"
       },
       "dark": {
-         "name": "elementary-dark",
-         "icon_theme": "WhiteSur-dark"
+         "name": "zenwritten-dark",
+         "icon_theme": "auto"
       }
    },
    "telemetry": {
-      "system_info": false
+      "system_info": true
    },
    "launcher_window": {
-      "opacity": 0.9,
       "client_side_decorations": {
          "enabled": true,
-         "rounding": 10,
-         "border_width": 5,
-         "shadow_size": 20
+         "border_width": 1,
+         "shadow_size": 12
       },
       "size": {
-         "width": 500,
-         "height": 480
+         "width": 750,
+         "height": 450
       },
       "blur": {
          "enabled": true
@@ -60,104 +61,21 @@
          "enabled": true
       },
       "layer_shell": {
-         "layer": "overlay",
+         "layer": "top",
          "keyboard_interactivity": "exclusive",
          "enabled": true
+      },
+      "material": "auto",
+      "clock": {
+         "enabled": true,
+         "interval": 60
       }
    },
-   "keybinds": {
-      "action.copy": "control+shift+C",
-      "action.copy-name": "control+shift+.",
-      "action.copy-path": "control+shift+,",
-      "action.dangerous-remove": "control+shift+X",
-      "action.duplicate": "control+D",
-      "action.edit": "control+E",
-      "action.edit-secondary": "control+shift+E",
-      "action.move-down": "control+shift+ARROWDOWN",
-      "action.move-up": "control+shift+ARROWUP",
-      "action.new": "control+N",
-      "action.open": "control+O",
-      "action.pin": "control+shift+P",
-      "action.refresh": "control+R",
-      "action.remove": "control+X",
-      "action.save": "control+S",
-      "open-search-filter": "control+P",
-      "open-settings": "control+,",
-      "toggle-action-panel": "control+B"
-   },
+   "keybinds": {},
    "favorites": [
-      "applications:com.nvidia.geforcenow",
-      "applications:firefox",
-      "applications:com.dec05eba.gpu_screen_recorder",
-      "applications:codium",
-      "applications:com.valvesoftware.Steam",
-      "applications:legcord",
-      "applications:com.spotify.Client",
       "clipboard:history"
    ],
    "fallbacks": [
       "files:search"
-   ],
-   "providers": {
-      "@marcjulian/store.raycast.obsidian": {
-         "preferences": {
-            "configFileName": "k13",
-            "vaultPath": "/home/komari/Documents/Obsi/K13"
-         }
-      },
-      "applications": {
-         "entrypoints": {
-            "blueman-manager": {
-               "alias": "blue"
-            },
-            "codium": {
-               "alias": "vis"
-            },
-            "com.obsproject.Studio": {
-               "alias": "obo"
-            },
-            "equibop": {
-               "alias": "dc"
-            },
-            "gparted": {
-               "alias": "gpa"
-            },
-            "legcord": {
-               "alias": "dc"
-            },
-            "modrinth-app": {
-               "alias": "rinth"
-            },
-            "obsidian": {
-               "alias": "obsi"
-            },
-            "org.vinegarhq.Sober": {
-               "alias": "roblox"
-            },
-            "spotify": {
-               "alias": "spo"
-            },
-            "visual-studio-code-electron": {
-               "alias": "vs"
-            },
-            "waypaper": {
-               "alias": "wp",
-               "enabled": true
-            }
-         }
-      },
-      "clipboard": {
-         "entrypoints": {
-            "clear": {
-               "alias": "clip"
-            },
-            "clear-history": {
-               "alias": "clip"
-            },
-            "history": {
-               "alias": "clip"
-            }
-         }
-      }
-   }
+   ]
 }
