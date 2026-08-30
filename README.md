@@ -1,6 +1,5 @@
 # Note:
-This is temporarlity not receiving any major updates, besides major configuration update changes, (i.e. hyprlands 0.54 > 0.55 .conf to .lua change)
-
+Updates are slower than before, the last update being Sunday, August 30th 2026 @ 2:57 PM EST
 ## Requirements
 
 + Arch Linux system (Made on hyprland, 0.55)
@@ -9,7 +8,7 @@ This is temporarlity not receiving any major updates, besides major configuratio
 
 ### Applications /  Items used
 + [yay](https://github.com/Jguer/yay)
-+ [qylock] (https://github.com/Darkkal44/qylock) as my sddm / lockscreen
++ [qylock](https://github.com/Darkkal44/qylock) as my sddm / lockscreen
 + flatpak
 + kitty (terminal)
 + firefox (browser)
@@ -17,7 +16,6 @@ This is temporarlity not receiving any major updates, besides major configuratio
   +  awww for wallpaper management (gifs, pngs, etc)
 + vicinae (emoji selector, clipboard)
 + thunar (file manager)
-+ veila (screen locking manager)
 + spotify (flatpak version is configured, can be changed in binds)
 
 (more in depth below.)
